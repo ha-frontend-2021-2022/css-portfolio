@@ -31,3 +31,5 @@ I denna uppgift ska vi formge vår HTML-struktur med hjälp av CSS.
 * Font och färger?
 
 * Meny- och kontakt-länkarnas utseende och states (hover, focus, active, visited)?
+
+* Varför fungerar inte vissa länkar i menyn?
