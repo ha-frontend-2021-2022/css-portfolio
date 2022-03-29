@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examples</title>
+  <style>
+    .example-preview {
+      border: 1px solid black;
+      margin: 2em 0 0;
+      position: relative;
+    }
+    .example-preview::before {
+      content: 'PREVIEW';
+      background: #eaeaea;
+      padding: .25em .5em;
+      border: 1px solid black;
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      left: -1px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Exempel</h1>
+    </header>
+
+    <article>
+      <header>
+        <h2>Boxmodel properties</h2>
+      </header>
+
+      <p>Exempel på de vanligaste boxmodel-properties för att style:a ett element.</p>
+
+      <div class="example-preview">
+        <div class="example-boxmodel">content</div>
+      </div>
+
+      <style>
+        .example-boxmodel {
+          /*
+          Elementets bredd. Blir 100% för block-element, och innehållets bredd för inline-element.
+          */
+          width: 10em;
+
+          /*
+          Elementets höjd.
+          */
+          height: 5em;
+
+          /*
+          Shorthand property som även kan styra andra background-... properties.
+          I detta fall color, men kan även vara bild, position etc. Se mdn för mer info.
+          */
+          background: yellow;
+
+          /*
+          Shorthand property som kan styra inre utrymme mellan elementets border och content.
+          Kan ta flera värden för att specificera olika värden per sida av elementet. Se mdn för mer info.
+          1em 2em           => top & bottom = 1em, right & left = 2em.
+          1em 2em 3em       => top = 1em, right & left = 2em, bottom = 3em.
+          1em 2em 3em 4em   => top = 1em, right = 2em, bottom = 3em, left = 4em.
+          */
+          padding: 1em;
+
+          /*
+          Shorthand property som kan styra andra border-... properties.
+          I detta fall width, style och color. Se mdn för mer info.
+          */
+          border: 3px solid blue;
+
+          /*
+          Shorthand property som kan styra andra outline-... properties.
+          I detta fall width, style och color. Se mdn för mer info.
+          Notera att outline renderas utanför elementet och visas därmed i margin-utrymmet (eller utanför om margin är t.ex. 0).
+          */
+          outline: .5em solid hotpink;
+
+          /*
+          Shorthand property som kan styra yttre utrymme mellan elementets border och omkringliggande element.
+          Följer samma logik som padding. Se mdn för mer info.
+          */
+          margin: 1em;
+        }
+      </style>
+    </article>
+
+    <article>
+      <header>
+        <h2>Text properties</h2>
+      </header>
+
+      <p>Exempel på de vanligaste text/font-properties för att style:a ett elements text.</p>
+
+      <div class="example-preview">
+        <div class="example-text">content</div>
+      </div>
+
+      <style>
+        .example-text {
+          /*
+          Bestämmer textens typsnitt. Om typsnitt saknas på operativsystemet eller inte kan laddas ner med @font-face deklaration (se mdn för mer info) så används nästa font i listan. Därför bra att ha systemfont eller alias (sans-serif, serif, monospace) i slutet av listan.
+          */
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+          /*
+          Bestämmer textens storlek.
+          */
+          font-size: 3em;
+
+          /*
+          Bestämmer höjden på en text-rad. Undvik css units då numret alltid tas gånger font-size värdet. I detta fall 3em * 2 = 6em i höjd på text-raden.
+          */
+          line-height: 2;
+
+          /*
+          Bestämmer mellanrummet mellan varje tecken i texten. Kan vara plus/minus-värden.
+          */
+          letter-spacing: -.125em;
+
+          /*
+          Bestämmer utrymmet före textens första tecken. Baserar sig på font-size (1em = 3em).
+          */
+          text-indent: 1em;
+
+          /*
+          Bestämmer olika dekorationer av texten, alla länkar har t.ex. underline som text-decoration som standard.
+          */
+          text-decoration: underline;
+
+          /*
+          Ändrar textens case, t.ex. små eller stora bokstäver.
+          */
+          text-transform: uppercase;
+
+          /*
+          Bestämmer textens färg.
+          */
+          color: orange;
+        }
+      </style>
+    </article>
+
+    <article>
+      <header>
+        <h2>Flex exempel</h2>
+      </header>
+
+      <p>Exempel på de vanligaste flex-properties för att styra layouten i en flex-context.</p>
+
+      <div class="example-preview">
+        <div class="example-flex">
+          <div>content</div>
+          <div>content</div>
+          <div>content</div>
+        </div>
+      </div>
+
+      <style>
+        .example-flex {
+          /*
+          Aktiverar en flex-context.
+          */
+          display: flex;
+
+          /*
+          Bestämmer vilken axel flex-items lägger sig utefter. I detta fall används row = X-axeln/horizontalen, medans column = Y-axeln/vertikalen.
+          */
+          flex-flow: row;
+
+          /*
+          Bestämmer mellanrummet mellan varje flex-items.
+          */
+          gap: 1em;
+
+          /*
+          Bestämmer justeringen av flex-contextens innehåll.
+          */
+          justify-content: center;
+
+          /*
+          Bestämmer justeringen av flex-items i flex-contextens "spår". I detta fall utefter Y-axeln/vertikalen.
+          */
+          align-items: flex-end;
+
+          /*
+          Det finns många olika kombinationer av flex-properties för att uppnå samma/snarlika resultat. Se mdn eller spela igenom flexboxfroggy som finns länkat i classroom för att testa på fler.
+          */
+        }
+
+        .example-flex > * {
+          background: yellow;
+          outline: thin dashed black;
+          flex: 1;
+        }
+
+        .example-flex > :nth-child(2){
+          background: hotpink;
+          height: 6em;
+          flex: 2;
+        }
+      </style>
+    </article>
+
+    <article>
+      <header>
+        <h2>Grid exempel</h2>
+      </header>
+
+      <p>Exempel på de vanligaste grid-properties för att styra layouten i en grid-context.</p>
+
+      <div class="example-preview">
+        <div class="example-grid">
+          <div>content</div>
+          <div>content</div>
+          <div>content</div>
+        </div>
+      </div>
+
+      <style>
+        .example-grid {
+          height: 20em;
+
+          /*
+          Aktiverar en grid-context.
+          */
+          display: grid;
+
+          /*
+          Deklarerar en template för grid-contextens kolumner
+          */
+          grid-template-columns:
+            minmax(1em, auto) /* Kolumn 1 = aldrig mindre än 1em, men växer om utrymme finns */
+            minmax(auto, 50ch)  /* Kolumn 2 = krymper/växer utefter utrymmet som ges, men växer inte längre än till 50ch (ca 50 teckens bredd) */
+            minmax(1em, auto) /* Kolumn 3 = aldrig mindre än 1em, men växer om utrymme finns */
+          ;
+
+          /*
+          Deklarerar en template för grid-contextens rader.
+          */
+          grid-template-rows:
+            3em /* Rad 1 = Alltid 3em */
+            1fr  /* Rad 2 = krymper/växer utefter det utrymmet som återstår */
+            auto /* Rad 3 = Innehållets storlek */
+          ;
+        }
+
+        .example-grid > * {
+          /*
+          Tvingar in en grid-item till en viss grid-column i grid-contexten.
+          */
+          grid-column: 2;
+
+          background: yellow;
+          outline: thin dashed black;
+        }
+
+        .example-grid > *:nth-child(1) {
+          /*
+          Tvingar in en grid-item till en viss grid-column och att den ska gå över flera grid-columns i grid-contexten.
+          */
+          grid-column: 1 / span 3;
+        }
+      </style>
+    </article>
+  </main>
+</body>
+</html>
