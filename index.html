@@ -5,225 +5,237 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Förnamn Efternamn</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;800&display=swap">
   <link rel="stylesheet" href="./assets/css/portfolio.css">
 </head>
 <body>
-  <nav>
-    <a href="#">Hem</a>
-    <a href="#om-mig">Om mig</a>
-    <a href="#kunskap">Kunskap</a>
-    <a href="#erfarenhet">Erfarenhet</a>
-    <a href="#projekt">Projekt</a>
+  <nav class="portfolio-menu">
+    <div>
+      <a href="#">Hem</a>
+      <a href="#kunskap">Kunskap</a>
+      <a href="#erfarenhet">Erfarenhet</a>
+      <a href="#projekt">Projekt</a>
+    </div>
   </nav>
 
   <main>
-    <article id="om-mig">
-      <header>
-        <h1>Förnamn Efternamn</h1>
-      </header>
-
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla totam temporibus magni maiores animi minus odit possimus. Exercitationem pariatur, dolorum error eaque, numquam quasi corrupti accusantium atque ab ipsa blanditiis.</p>
-
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla totam temporibus magni maiores animi minus odit possimus. Exercitationem pariatur, dolorum error eaque, numquam quasi corrupti accusantium atque ab ipsa blanditiis.</p>
-
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla totam temporibus magni maiores animi minus odit possimus. Exercitationem pariatur, dolorum error eaque, numquam quasi corrupti accusantium atque ab ipsa blanditiis.</p>
-
-      <p>
-        <strong>Kontakta mig</strong>
-        <a href="tel:+3584573435986">Ring</a>
-        <a href="mailto:johan@westling.ax">Maila</a>
-      </p>
-
-      <section id="kunskap">
-        <header>
-          <h2>Kunskap</h2>
+    <article>
+      <div class="portfolio-view portfolio-home">
+        <div class="portfolio-home-animation">
+          <header>
+            <h1 class="portfolio-view-title">Förnamn Efternamn</h1>
+          </header>
 
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla totam temporibus magni maiores animi minus odit possimus. Exercitationem pariatur, dolorum error eaque, numquam quasi corrupti accusantium atque ab ipsa blanditiis.</p>
-        </header>
 
-        <h3>Techstack</h3>
-        <ul>
-          <li>
-            <p>HTML</p>
-          </li>
-          <li>
-            <p>CSS</p>
-          </li>
-          <li>
-            <p>JavaScript</p>
-          </li>
-          <li>
-            <p>Node.js</p>
-          </li>
-          <li>
-            <p>Git</p>
-          </li>
-        </ul>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla totam temporibus magni maiores animi minus odit possimus. Exercitationem pariatur, dolorum error eaque, numquam quasi corrupti accusantium atque ab ipsa blanditiis.</p>
 
-        <h3>Språk</h3>
-        <ul>
-          <li>
-            <p>Engelska</p>
-          </li>
-          <li>
-            <p>Svenska</p>
-          </li>
-        </ul>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla totam temporibus magni maiores animi minus odit possimus. Exercitationem pariatur, dolorum error eaque, numquam quasi corrupti accusantium atque ab ipsa blanditiis.</p>
+
+          <div class="portfolio-home-contact">
+            <strong>Kontakta mig:</strong>
+            <ul>
+              <li>
+                <a href="tel:+3584573435986">Ring</a>
+              </li>
+              <li>
+                <a href="mailto:johan@westling.ax">Maila</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <section class="portfolio-view portfolio-knowledge" id="kunskap">
+        <div class="portfolio-knowledge-animation">
+          <header>
+            <h2 class="portfolio-view-title">Kunskap</h2>
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla totam temporibus magni maiores animi minus odit possimus. Exercitationem pariatur, dolorum error eaque, numquam quasi corrupti accusantium atque ab ipsa blanditiis.</p>
+          </header>
+
+          <div class="portfolio-knowledge-items">
+            <div>
+              <h3>Techstack</h3>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Node.js</li>
+                <li>Git</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Språk</h3>
+              <ul>
+                <li>Engelska</li>
+                <li>Svenska</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section id="erfarehet">
+      <section class="portfolio-view portfolio-experience" id="erfarenhet">
         <header>
-          <h3>Erfarenhet</h3>
+          <h3 class="portfolio-view-title">Erfarenhet</h3>
         </header>
 
-        <article>
-          <header>
-            <h4>Arbetsplats 4</h4>
+        <div class="portfolio-experience-items">
+          <article class="portfolio-card portfolio-experience-item">
+            <header>
+              <h4>Arbetsplats 4</h4>
 
-            <p>
-              <time datetime="2021-03-01">1 mars 2021</time>
-            </p>
-          </header>
+              <p>
+                <time datetime="2021-03-01">1 mars 2021</time>
+              </p>
+            </header>
 
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et obcaecati in eius quo eos repellat itaque quae modi, inventore deleniti fugit architecto possimus placeat, laboriosam aspernatur at? Porro, natus fugiat!</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et obcaecati in eius quo eos repellat itaque quae modi, inventore deleniti fugit architecto possimus placeat, laboriosam aspernatur at? Porro, natus fugiat!</p>
+          </article>
 
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et obcaecati in eius quo eos repellat itaque quae modi, inventore deleniti fugit architecto possimus placeat, laboriosam aspernatur at? Porro, natus fugiat!</p>
+          <article class="portfolio-card portfolio-experience-item">
+            <header>
+              <h4>Arbetsplats 3</h4>
 
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et obcaecati in eius quo eos repellat itaque quae modi, inventore deleniti fugit architecto possimus placeat, laboriosam aspernatur at? Porro, natus fugiat!</p>
-        </article>
+              <p>
+                <time datetime="2019-08-10">10 augusti 2019</time>
+              </p>
+            </header>
 
-        <article>
-          <header>
-            <h4>Arbetsplats 3</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et obcaecati in eius quo eos repellat itaque quae modi, inventore deleniti fugit architecto possimus placeat, laboriosam aspernatur at? Porro, natus fugiat!</p>
+          </article>
 
-            <p>
-              <time datetime="2019-08-10">10 augusti 2019</time>
-            </p>
-          </header>
+          <article class="portfolio-card portfolio-experience-item">
+            <header>
+              <h4>Arbetsplats 2</h4>
 
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et obcaecati in eius quo eos repellat itaque quae modi, inventore deleniti fugit architecto possimus placeat, laboriosam aspernatur at? Porro, natus fugiat!</p>
+              <p>
+                <time datetime="2017-01-27">27 januari 2017</time>
+              </p>
+            </header>
 
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et obcaecati in eius quo eos repellat itaque quae modi, inventore deleniti fugit architecto possimus placeat, laboriosam aspernatur at? Porro, natus fugiat!</p>
-        </article>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et obcaecati in eius quo eos repellat itaque quae modi, inventore deleniti fugit architecto possimus placeat, laboriosam aspernatur at? Porro, natus fugiat!</p>
+          </article>
 
-        <article>
-          <header>
-            <h4>Arbetsplats 2</h4>
+          <article class="portfolio-card portfolio-experience-item">
+            <header>
+              <h4>Arbetsplats 1</h4>
 
-            <p>
-              <time datetime="2017-01-27">27 januari 2017</time>
-            </p>
-          </header>
+              <p>
+                <time datetime="2015-11-13">13 november 2015</time>
+              </p>
+            </header>
 
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et obcaecati in eius quo eos repellat itaque quae modi, inventore deleniti fugit architecto possimus placeat, laboriosam aspernatur at? Porro, natus fugiat!</p>
-        </article>
-
-        <article>
-          <header>
-            <h4>Arbetsplats 1</h4>
-
-            <p>
-              <time datetime="2015-11-13">13 november 2015</time>
-            </p>
-          </header>
-
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et obcaecati in eius quo eos repellat itaque quae modi, inventore deleniti fugit architecto possimus placeat, laboriosam aspernatur at? Porro, natus fugiat!</p>
-        </article>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et obcaecati in eius quo eos repellat itaque quae modi, inventore deleniti fugit architecto possimus placeat, laboriosam aspernatur at? Porro, natus fugiat!</p>
+          </article>
+        </div>
       </section>
     </article>
   </main>
 
-  <section>
+  <section class="portfolio-view portfolio-projects" id="projekt">
     <header>
-      <h2>Projekt</h2>
+      <h2 class="portfolio-view-title">Projekt</h2>
     </header>
 
-    <article>
-      <header>
-        <h3>Projekt 1</h3>
-      </header>
+    <div class="portfolio-projects-viewer">
+      <input type="radio" name="slide" value="1">
+      <input type="radio" name="slide" value="2" checked>
+      <input type="radio" name="slide" value="3">
 
-      <figure>
-        <img src="./assets/img/project-1.jpg" alt="Beskrivning av vad bilden föreställer">
-        <figcaption>Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit.</figcaption>
-      </figure>
+      <div class="portfolio-projects-items">
+        <article class="portfolio-card portfolio-projects-item">
+          <header>
+            <h3>Projekt 1</h3>
+          </header>
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
-      </p>
+          <figure>
+            <img src="./assets/img/project-1.jpg" alt="Beskrivning av vad bilden föreställer">
+            <figcaption>Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit.</figcaption>
+          </figure>
 
-      <footer>
-        <p>
-          Techstack:
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Vue</li>
-          </ul>
-        </p>
-      </footer>
-    </article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
+          </p>
 
-    <article>
-      <header>
-        <h3>Projekt 2</h3>
-      </header>
+          <footer>
+            <p>
+              Techstack:
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Vue</li>
+              </ul>
+            </p>
+          </footer>
+        </article>
 
-      <figure>
-        <img src="./assets/img/project-2.jpg" alt="Beskrivning av vad bilden föreställer">
-        <figcaption>Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit.</figcaption>
-      </figure>
+        <article class="portfolio-card portfolio-projects-item">
+          <header>
+            <h3>Projekt 2</h3>
+          </header>
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
-      </p>
+          <figure>
+            <img src="./assets/img/project-2.jpg" alt="Beskrivning av vad bilden föreställer">
+            <figcaption>Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit.</figcaption>
+          </figure>
 
-      <footer>
-        <p>
-          Techstack:
-          <ul>
-            <li>Djur</li>
-            <li>HTML</li>
-            <li>CSS</li>
-          </ul>
-        </p>
-      </footer>
-    </article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
+          </p>
 
-    <article>
-      <header>
-        <h3>Projekt 3</h3>
-      </header>
+          <footer>
+            <p>
+              Techstack:
+              <ul>
+                <li>Djur</li>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+            </p>
+          </footer>
+        </article>
 
-      <figure>
-        <img src="./assets/img/project-3.jpg" alt="Beskrivning av vad bilden föreställer">
-        <figcaption>Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit.</figcaption>
-      </figure>
+        <article class="portfolio-card portfolio-projects-item">
+          <header>
+            <h3>Projekt 3</h3>
+          </header>
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
-      </p>
+          <figure>
+            <img src="./assets/img/project-3.jpg" alt="Beskrivning av vad bilden föreställer">
+            <figcaption>Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit.</figcaption>
+          </figure>
 
-      <footer>
-        <p>
-          Techstack:
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-          </ul>
-        </p>
-      </footer>
-    </article>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.
+          </p>
+
+          <footer>
+            <p>
+              Techstack:
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+            </p>
+          </footer>
+        </article>
+      </div>
+    </div>
   </section>
 </body>
 </html>

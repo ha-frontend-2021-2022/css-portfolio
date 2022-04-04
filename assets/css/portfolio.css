@@ -1,14 +1,555 @@
+/*
+ * Custom properties
+ * =================
+ * Variabler som kan användas för hela eller delar av ett värde för en css-property.
+ */
+
+:root {
+  /* Main color custom properties */
+  --color-main-h: 220;
+  --color-main-s: 60%;
+  --color-main-l: 50%;
+  --color-main: hsl(
+    var(--color-main-h),
+    var(--color-main-s),
+    var(--color-main-l)
+  );
+
+  --color-main-light: hsl(
+    var(--color-main-h),
+    calc(var(--color-main-s) - 10%),
+    calc(var(--color-main-l) + 35%)
+  );
+  --color-main-lighter: hsl(
+    var(--color-main-h),
+    calc(var(--color-main-s) - 20%),
+    calc(var(--color-main-l) + 40%)
+  );
+  --color-main-lightest: hsl(
+    var(--color-main-h),
+    calc(var(--color-main-s) - 30%),
+    calc(var(--color-main-l) + 45%)
+  );
+
+  --color-main-dark: hsl(
+    var(--color-main-h),
+    calc(var(--color-main-s) - 10%),
+    calc(var(--color-main-l) - 35%)
+  );
+  --color-main-darker: hsl(
+    var(--color-main-h),
+    calc(var(--color-main-s) - 20%),
+    calc(var(--color-main-l) - 40%)
+  );
+  --color-main-darkest: hsl(
+    var(--color-main-h),
+    calc(var(--color-main-s) - 30%),
+    calc(var(--color-main-l) - 45%)
+  );
+
+  /* Accent color custom properties */
+  --color-accent-h: 340;
+  --color-accent-s: 70%;
+  --color-accent-l: 55%;
+  --color-accent: hsl(
+    var(--color-accent-h),
+    var(--color-accent-s),
+    var(--color-accent-l)
+  );
+
+  --color-accent-light: hsl(
+    var(--color-accent-h),
+    calc(var(--color-accent-s) + 10%),
+    calc(var(--color-accent-l) + 10%)
+  );
+  --color-accent-lighter: hsl(
+    var(--color-accent-h),
+    calc(var(--color-accent-s) + 20%),
+    calc(var(--color-accent-l) + 20%)
+  );
+  --color-accent-lightest: hsl(
+    var(--color-accent-h),
+    calc(var(--color-accent-s) + 0%),
+    calc(var(--color-accent-l) + 45%)
+  );
+
+  --color-accent-dark: hsl(
+    var(--color-accent-h),
+    calc(var(--color-accent-s) - 10%),
+    calc(var(--color-accent-l) - 35%)
+  );
+  --color-accent-darker: hsl(
+    var(--color-accent-h),
+    calc(var(--color-accent-s) - 20%),
+    calc(var(--color-accent-l) - 40%)
+  );
+  --color-accent-darkest: hsl(
+    var(--color-accent-h),
+    calc(var(--color-accent-s) - 30%),
+    calc(var(--color-accent-l) - 45%)
+  );
+
+  /* Font custom properties */
+  --font-main: 'Outfit', sans-serif;
+
+  /* Site custom properties */
+  --background-color: var(--color-main-lighter);
+  --background-variant-color: var(--color-main-light);
+  --foreground-color: var(--color-main-darker);
+
+  /* Card custom properties */
+  --card-background: var(--color-main-lightest);
+  --card-foreground: var(--color-main-darker);
+  --card-radius: 1em;
+  --card-shadow: 0 .1em .5em rgba(0,0,0,.2);
+}
+
+/*
+ * Custom properties
+ * =================
+ * Variabler som ändrar värde om användaren har dark mode aktiverat i operativsystemet/webbläsaren.
+ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--color-main-darker);
+    --background-variant-color: var(--color-main-dark);
+    --foreground-color: var(--color-main-lighter);
+
+    --card-background: var(--color-main-darkest);
+    --card-foreground: var(--color-main-lighter);
+  }
+}
+
+/*
+ * Element
+ * =======
+ * Bas-styling för HTML-element.
+ */
+
 html {
-  box-sizing: border-box;
-  font-size: 100%;
+  box-sizing: border-box; /* Ändra renderingsmetod för boxmodel. */
+  background: var(--background-color);
+
+  font-size: 100%; /* Ta användarens inställning för text storlek i beaktande. */
+  color: var(--foreground-color);
+
+  scroll-behavior: smooth; /* Akriverar mjuk scrollning inom dokumentets olika delar. */
 }
 
 *,
 *::before,
-*::after {
-  box-sizing: inherit;
+*::after { /* Alla element och pseudo-element */
+  box-sizing: inherit; /* Ärv renderingsmetoden för boxmodel från närmst ovanstående element som har box-sizing deklarerat. */
 }
 
 body {
   margin: 0;
+}
+
+body, button, input, select, textarea { /* Använd samma font och storlek på text för dokumentets text och form element */
+  font-family: var(--font-main);
+  font-size: 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1rem 0 0; /* Använder rem här för att inte få större margin om t.ex. en h1 har större font-size än en h3. */
+}
+
+header > *:first-child {
+  margin-top: 0;
+}
+
+p {
+  margin: .25rem 0 1rem;
+}
+
+ul,
+ol {
+  margin: .5em 0 1em;
+  padding: 0 0 0 1em;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+}
+
+img,
+picture { /* Låt inte bilder växa större än det utrymme som ges (även om bilden är större). */
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+figure { /* Figure har en default margin som ofta är överflödig, vi justerar den hellre då det behövs och sätter den till 0 som standard istället. */
+  margin: 0;
+}
+
+/*
+ * Portfolio view
+ * ==============
+ * Skapade en portfolio-view class för att kunna dela de properties som är
+ * gemensamma mellan olika vyer som portfolio-menu i sin tur länkar till.
+ *
+ * En vy blir alltid minst 100vh för att ge känslan av en "sida", men
+ * innehåller även en grid för att innehållet ska placerar i en centrerad
+ * kolumn som inte får för långa rader (och således lättare att läsa) och
+ * med dynamiskt skalbar luft på vardera sida för att undvika att texten
+ * går ut till webbläsarens kant (som kan upplevas trångt och svårt att läsa).
+ */
+
+.portfolio-view {
+  width: 100%;
+  min-height: 100vh;
+  padding: 4em 0;
+  overflow: hidden;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns:
+    [view-margin-before] minmax(2em, auto) /* Minst 2em luft till webbläsarens kant, men väx om utrymme ges). */
+    [view-content] minmax(auto, 50ch) /* Utnyttja befintligt utrymme, men stanna vid 50ch bredd. */
+    [view-margin-after] minmax(2em, auto) /* Minst 2em luft till webbläsarens kant, men väx om utrymme ges). */
+  ;
+  align-content: center;
+}
+
+.portfolio-view > * {
+  grid-area: view-content;
+  grid-row: auto;
+}
+
+.portfolio-view-title {
+  font-size: 2.25em;
+}
+
+/*
+ * Portfolio card
+ * ==============
+ * Delade properties för att kunna återanvända och om så behövs ändra utseendet på alla kort
+ * från ett och samma ställe.
+ */
+
+.portfolio-card {
+  background: var(--card-background);
+  padding: 1.125em;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+
+  color: var(--card-foreground);
+}
+
+
+/*
+ * Portfolio menu
+ * ==============
+ * Länkar för att hoppa mellan dokumentets olika "vyer" som fästs vid webbläsarens övre kant
+ * då dokumentet scrollas för att alltid finnas tillgänglig för användaren.
+ *
+ * En extra div används för att styra länkarnas mellanrum, men framförallt för att styra över
+ * hur dessa scrollas då de inte längre finns tillräckligt med plats. I detta fall kommer
+ * mindre skärmar scrolla i sidled. Men vi kunde även använt flex-flow: row wrap; för att
+ * istället låta länkarna lägga sig på ny rad vid behov.
+ */
+
+.portfolio-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.portfolio-menu div {
+  padding: 1em 1.75em;
+  overflow-x: auto;
+
+  display: flex;
+  gap: 1em;
+}
+
+.portfolio-menu a {
+  background: radial-gradient(circle at bottom, var(--color-accent), var(--color-accent));
+  padding: .45em 1.125em .55em;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.2),
+    0 .1em .2em rgba(0,0,0,.2)
+  ;
+  border-radius: 99em;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  text-shadow: 0 1px 0 rgba(0,0,0,.2);
+  text-decoration: none;
+  color: var(--color-accent-lightest);
+
+  transition:
+    transform .2s ease
+  ;
+}
+
+.portfolio-menu a:hover,
+.portfolio-menu a:focus {
+  background: radial-gradient(circle at bottom, var(--color-accent-light), var(--color-accent));
+  transform: scale(1.1);
+}
+
+/*
+ * Portfolio home
+ * ==============
+ */
+
+.portfolio-home {
+}
+
+.portfolio-home-contact ul {
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: .5em;
+}
+
+.portfolio-home-contact a {
+  background: var(--color-main);
+  padding: .45em 1.125em .55em;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,.2),
+    0 .1em .2em rgba(0,0,0,.2)
+  ;
+  border-radius: 99em;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  text-shadow: 0 1px 0 rgba(0,0,0,.2);
+  text-decoration: none;
+  color: var(--color-main-lightest);
+
+  transition: transform .2s ease;
+}
+
+.portfolio-home-contact a:hover,
+.portfolio-home-contact a:focus {
+  transform: scale(1.1);
+}
+
+/*
+ * Portfolio knowledge
+ * ===================
+ */
+
+.portfolio-knowledge {
+  background: var(--background-variant-color)
+}
+
+.portfolio-knowledge-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+}
+
+/*
+ * Portfolio experience
+ * ====================
+ */
+
+.portfolio-experience {
+}
+
+.portfolio-experience-items {
+  margin-top: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+  gap: 1em;
+}
+
+.portfolio-experience-item {
+  opacity: 0;
+  transform: perspective(100vw) rotateY(90deg) scale(0);
+  animation: portfolio-experience-enter .5s ease forwards;
+}
+
+@keyframes portfolio-experience-enter {
+  to {
+    opacity: 1;
+    transform: perspective(100vw) rotateY(0deg) scale(1);
+  }
+}
+
+.portfolio-experience-item:nth-child(1) {
+  animation-delay: .2s;
+}
+
+.portfolio-experience-item:nth-child(2) {
+  animation-delay: .4s;
+}
+
+.portfolio-experience-item:nth-child(3) {
+  animation-delay: .6s;
+}
+
+.portfolio-experience-item:nth-child(4) {
+  animation-delay: .8s;
+}
+
+.portfolio-experience-item time {
+  font-size: .875em;
+  color: var(--color-main);
+}
+
+/*
+ * Portfolio projects
+ * ==================
+ */
+
+.portfolio-projects {
+  background: var(--background-variant-color)
+}
+
+.portfolio-projects-viewer {
+  margin-top: 1rem;
+
+  display: grid;
+  grid-template-columns:
+    [project-slides-start] repeat(3, 1fr)
+    [project-slides-end]
+  ;
+  justify-items: center;
+  gap: 1em
+}
+
+.portfolio-projects-viewer > input {
+  width: 100%;
+  height: 3em;
+  padding: 3em;
+  display: block;
+  accent-color: var(--color-accent);
+}
+
+.portfolio-projects-viewer > input[value="1"]:checked ~ .portfolio-projects-items {
+  transform: translateX(0%);
+}
+
+.portfolio-projects-viewer > input[value="2"]:checked ~ .portfolio-projects-items {
+  transform: translateX(-100%);
+}
+
+.portfolio-projects-viewer > input[value="3"]:checked ~ .portfolio-projects-items {
+  transform: translateX(-200%);
+}
+
+/* Utseende för aktiv item */
+.portfolio-projects-viewer > input[value="1"]:checked ~ .portfolio-projects-items .portfolio-projects-item:nth-child(1),
+.portfolio-projects-viewer > input[value="2"]:checked ~ .portfolio-projects-items .portfolio-projects-item:nth-child(2),
+.portfolio-projects-viewer > input[value="3"]:checked ~ .portfolio-projects-items .portfolio-projects-item:nth-child(3) {
+  transform: perspective(100vw) translateZ(-0vw) rotateY(0deg);
+}
+
+/* Utseende för andra items */
+.portfolio-projects-viewer > input[value="1"]:checked ~ .portfolio-projects-items .portfolio-projects-item:not(:nth-child(1)),
+.portfolio-projects-viewer > input[value="2"]:checked ~ .portfolio-projects-items .portfolio-projects-item:not(:nth-child(2)),
+.portfolio-projects-viewer > input[value="3"]:checked ~ .portfolio-projects-items .portfolio-projects-item:not(:nth-child(3)) {
+  transform: perspective(100vw) translateZ(-50vw) rotateY(45deg);
+}
+
+.portfolio-projects-items {
+  width: 100%;
+  max-width: 100%;;
+  grid-area: project-slides;
+
+  display: flex;
+  gap: 0;
+
+  transition: all .25s ease;
+}
+
+.portfolio-projects-item {
+  padding: 0;
+  margin: 0;
+
+  flex: 0 0 100%;
+
+  display: grid;
+  grid-template-columns:
+    [image-start] 1.5em
+    [content] auto
+    1.5em [image-end]
+  ;
+  grid-template-rows:
+    [image] auto
+    [content] auto
+  ;
+
+  position: relative;
+  transition: transform .25s ease;
+}
+
+.portfolio-projects-item > * {
+  grid-area: content;
+  grid-row: auto;
+}
+
+.portfolio-projects-item > figure {
+  width: 100%;
+  border-top-left-radius: var(--card-radius);
+  border-top-right-radius: var(--card-radius);
+  margin: 0 0 1rem;
+  overflow: hidden;
+
+  grid-area: image;
+}
+
+.portfolio-projects-item figcaption {
+  margin: .5rem 0 0;
+  padding: 0 1.5rem;
+  font-size: .875em;
+}
+
+.portfolio-projects-item footer {
+  margin: 0;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  gap: 0 .5em;
+
+  font-size: .875em;
+}
+
+.portfolio-projects-item footer p {
+  margin-bottom: 0;
+}
+
+.portfolio-projects-item footer ul {
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0 .5em;
+}
+
+.portfolio-projects-item footer li {
+  background: var(--color-accent);
+  padding: .5em 1em;
+  border-radius: 99em;
+
+  color: var(--color-accent-lightest);
 }
