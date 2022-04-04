@@ -191,6 +191,17 @@ figure { /* Figure har en default margin som ofta är överflödig, vi justerar 
   margin: 0;
 }
 
+@keyframes portfolio-animation-enter {
+  from {
+    opacity: 1;
+    transform: perspective(100vw) translateZ(-100vw) translateY(20vh);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(100vw) translateZ(0vw) translateY(0vh);
+  }
+}
+
 /*
  * Portfolio view
  * ==============
@@ -311,7 +322,9 @@ figure { /* Figure har en default margin som ofta är överflödig, vi justerar 
  * ==============
  */
 
-.portfolio-home {
+.portfolio-home-animation {
+  opacity: 0;
+  animation: portfolio-animation-enter .5s ease forwards;
 }
 
 .portfolio-home-contact ul {
@@ -359,6 +372,11 @@ figure { /* Figure har en default margin som ofta är överflödig, vi justerar 
   background: var(--background-variant-color)
 }
 
+.portfolio-knowledge-animation {
+  opacity: 0;
+  animation: portfolio-animation-enter .5s ease forwards;
+}
+
 .portfolio-knowledge-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
@@ -368,9 +386,6 @@ figure { /* Figure har en default margin som ofta är överflödig, vi justerar 
  * Portfolio experience
  * ====================
  */
-
-.portfolio-experience {
-}
 
 .portfolio-experience-items {
   margin-top: 1rem;
@@ -382,14 +397,17 @@ figure { /* Figure har en default margin som ofta är överflödig, vi justerar 
 
 .portfolio-experience-item {
   opacity: 0;
-  transform: perspective(100vw) rotateY(90deg) scale(0);
   animation: portfolio-experience-enter .5s ease forwards;
 }
 
 @keyframes portfolio-experience-enter {
+  from {
+    opacity: 0;
+    transform: perspective(100vw) translateZ(-100vw) rotateY(90deg);
+  }
   to {
     opacity: 1;
-    transform: perspective(100vw) rotateY(0deg) scale(1);
+    transform: perspective(100vw) translateZ(0vw) rotateY(0deg);
   }
 }
 
@@ -471,7 +489,7 @@ figure { /* Figure har en default margin som ofta är överflödig, vi justerar 
 
 .portfolio-projects-items {
   width: 100%;
-  max-width: 100%;;
+  max-width: 100%;
   grid-area: project-slides;
 
   display: flex;
