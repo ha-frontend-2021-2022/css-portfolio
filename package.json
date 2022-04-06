@@ -1,0 +1,23 @@
+{
+  "name": "css-portfolio",
+  "version": "1.0.0",
+  "description": "I denna uppgift ska vi formge vår HTML-struktur med hjälp av CSS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ha-frontend-2021-2022/css-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ha-frontend-2021-2022/css-portfolio/issues"
+  },
+  "homepage": "https://github.com/ha-frontend-2021-2022/css-portfolio#readme",
+  "dependencies": {
+    "serve": "^13.0.2"
+  }
+}
