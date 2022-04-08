@@ -1,0 +1,92 @@
+{
+  "projects": [
+    {
+      "title": "Projekt 1",
+      "image": {
+        "src": "./assets/img/project-1.jpg",
+        "alt": "Beskrivning av vad bilden föreställer",
+        "caption": "Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit."
+      },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.",
+      "techstack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Vue"
+      ]
+    },
+    {
+      "title": "Projekt 2",
+      "image": {
+        "src": "./assets/img/project-2.jpg",
+        "alt": "Beskrivning av vad bilden föreställer",
+        "caption": "Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit."
+      },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.",
+      "techstack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Vue"
+      ]
+    },
+    {
+      "title": "Projekt 3",
+      "image": {
+        "src": "./assets/img/project-3.jpg",
+        "alt": "Beskrivning av vad bilden föreställer",
+        "caption": "Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit."
+      },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.",
+      "techstack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Vue"
+      ]
+    },
+    {
+      "title": "Projekt 4",
+      "image": {
+        "src": "./assets/img/project-4.jpg",
+        "alt": "Beskrivning av vad bilden föreställer",
+        "caption": "Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit."
+      },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.",
+      "techstack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Vue"
+      ]
+    },
+    {
+      "title": "Projekt 5",
+      "image": {
+        "src": "./assets/img/project-5.jpg",
+        "alt": "Beskrivning av vad bilden föreställer",
+        "caption": "Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit."
+      },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.",
+      "techstack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Vue"
+      ]
+    },
+    {
+      "title": "Projekt 6",
+      "image": {
+        "src": "./assets/img/project-6.jpg",
+        "alt": "Beskrivning av vad bilden föreställer",
+        "caption": "Bildtext lorem ipsum dolor sit amet consectetur adipisicing elit."
+      },
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ab harum accusantium eos voluptatem, aliquid soluta magni totam reiciendis maxime fuga quia aspernatur voluptatum porro et alias molestiae rem tempore.",
+      "techstack": [
+        "HTML",
+        "CSS"
+      ]
+    }
+  ]
+}
